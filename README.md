@@ -43,7 +43,6 @@ export LANGCHAIN_PROJECT=retail-ai-enablement-poc
 # Run
 python agent.py
 ```
-
 ## Sample Questions to Try
 - "How does HEB handle demand forecasting?"
 - "How is customer personalization done?"
@@ -54,4 +53,9 @@ python agent.py
 - **Observability**: Full trace of every LLM call visible in LangSmith
 - **Fallback strategy**: Controlled "I don't know" response prevents hallucination
 - **Vector search**: Semantic similarity search via Chroma, not keyword matching
+
+## Traces from LangSmith
+<img width="1504" height="758" alt="LangSmith Tracing" src="https://github.com/user-attachments/assets/a4f78fb7-8a01-4db1-93b6-08fe5b88f044" />
+
+
 ```
