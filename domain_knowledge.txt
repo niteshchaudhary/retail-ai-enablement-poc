@@ -1,28 +1,70 @@
+H-E-B Retail Knowledge Base
 
-H-E-B is a large retail grocery chain operating 420+ stores in Texas and Mexico.
+COMPANY OVERVIEW
+H-E-B is one of the largest independently owned food retailers in the United States.
+H-E-B operates over 420 stores throughout Texas and Mexico.
+H-E-B generates annual sales of over $48 billion.
+H-E-B employs over 145,000 partners (employees).
+H-E-B is headquartered in San Antonio, Texas.
 
-Product Catalog Management:
+PRODUCT CATALOG MANAGEMENT
 H-E-B manages over 50,000 SKUs across fresh produce, packaged goods, and private label products.
 Products are categorized by department, aisle, and shelf placement.
-Pricing is updated daily based on competitor analysis and demand forecasting models.
+H-E-B private label brands include H-E-B, Central Market, and Hill Country Fare.
+New products go through a vendor onboarding process including quality checks and compliance review.
+Product data is maintained in a master product catalog synced across all stores and digital channels.
 
-Demand Forecasting:
+PRICING STRATEGY
+Pricing is updated daily based on competitor analysis and demand forecasting models.
+H-E-B uses dynamic pricing for perishable goods to reduce waste.
+Promotional pricing is planned weeks in advance and coordinated with vendor partners.
+Price optimization models consider elasticity, competitor prices, and inventory levels.
+H-E-B price matches competitors in local markets to remain competitive.
+
+DEMAND FORECASTING
 H-E-B uses ML models to forecast demand at store and SKU level.
 Forecasting models are retrained weekly using point-of-sale data.
 Accurate forecasting reduces food waste and improves on-shelf availability.
+Demand forecasts drive replenishment orders, staffing, and promotional planning.
+External factors like weather, holidays, and local events are incorporated into forecast models.
+Forecast accuracy is measured using MAPE (Mean Absolute Percentage Error).
 
-Inventory Management:
+INVENTORY MANAGEMENT
 Inventory levels are tracked in real time across all stores and distribution centers.
 Automated replenishment triggers are based on reorder point models.
 Out-of-stock events are flagged and escalated to store managers automatically.
+H-E-B operates multiple distribution centers across Texas to support store replenishment.
+Shrink (inventory loss due to theft, damage, or expiry) is tracked and reported daily.
+Safety stock levels are calculated based on demand variability and lead times.
 
-Customer Personalization:
+SUPPLY CHAIN
+H-E-B works with thousands of local and national vendors.
+H-E-B prioritizes local Texas vendors as part of its community commitment.
+Vendor scorecards track on-time delivery, fill rate, and quality compliance.
+Supply chain disruptions are monitored in real time and alternative sourcing is activated when needed.
+H-E-B owns and operates its own trucking fleet for distribution.
+Cold chain management is critical for fresh produce and dairy products.
+
+CUSTOMER PERSONALIZATION
 H-E-B uses purchase history and browsing behavior to personalize promotions.
 Personalization models are updated nightly and served via the H-E-B app and website.
 Customer segments are defined by purchase frequency, basket size, and brand affinity.
+Personalized digital coupons are delivered through the H-E-B app.
+Customer lifetime value models help prioritize marketing spend across segments.
+H-E-B loyalty data is used to improve product recommendations and store layout decisions.
 
-AI Enablement at H-E-B:
+STORE OPERATIONS
+Each H-E-B store is managed by a store director supported by department managers.
+Store performance is measured by sales per square foot, shrink rate, and customer satisfaction scores.
+Store associates are trained on customer service, food safety, and inventory handling.
+H-E-B uses workforce management tools to optimize staffing based on foot traffic forecasts.
+Store layouts are optimized using customer traffic pattern analysis.
+
+AI ENABLEMENT AT H-E-B
 MLOps pipelines manage the lifecycle of demand forecasting and personalization models.
 LLMOps frameworks support internal chatbots and customer facing AI assistants.
 RAG systems are used to ground AI responses in H-E-B product and policy data.
 LangSmith is used for LLM observability and tracing across all AI pipelines.
+AI governance policies ensure models are auditable, explainable, and free from bias.
+Feature stores centralize reusable ML features across demand forecasting and personalization models.
+Model performance is monitored continuously and retraining is triggered when drift is detected.
