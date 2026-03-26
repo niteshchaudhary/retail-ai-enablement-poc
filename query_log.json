@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-03-25T19:52:01.497609",
+    "question": "How does H-E-B handle demand forecasting?",
+    "answered": true,
+    "category_filter": "All",
+    "answer_preview": "H-E-B uses machine learning (ML) models to forecast demand at the store and SKU level. These models are retrained weekly"
+  },
+  {
+    "timestamp": "2026-03-25T19:52:48.198712",
+    "question": "How does H-E-B personalize promotions?",
+    "answered": false,
+    "category_filter": "Operations",
+    "answer_preview": "unanswered"
+  },
+  {
+    "timestamp": "2026-03-25T19:53:07.739089",
+    "question": "What is the return policy at H-E-B?",
+    "answered": false,
+    "category_filter": "Operations",
+    "answer_preview": "unanswered"
+  },
+  {
+    "timestamp": "2026-03-25T19:53:35.138936",
+    "question": "How does H-E-B personalize promotions?",
+    "answered": true,
+    "category_filter": "Strategy",
+    "answer_preview": "According to available knowledge, H-E-B personalizes promotions by using purchase history and browsing behavior. (Source"
+  }
+]
