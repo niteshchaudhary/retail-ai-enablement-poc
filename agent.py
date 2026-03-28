@@ -12,38 +12,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "retail-ai-enablement-poc"
 
 # Step 1: Retail domain document
-sample_doc = """
-H-E-B is a large retail grocery chain operating 420+ stores in Texas and Mexico.
-
-Product Catalog Management:
-H-E-B manages over 50,000 SKUs across fresh produce, packaged goods, and private label products.
-Products are categorized by department, aisle, and shelf placement.
-Pricing is updated daily based on competitor analysis and demand forecasting models.
-
-Demand Forecasting:
-H-E-B uses ML models to forecast demand at store and SKU level.
-Forecasting models are retrained weekly using point-of-sale data.
-Accurate forecasting reduces food waste and improves on-shelf availability.
-
-Inventory Management:
-Inventory levels are tracked in real time across all stores and distribution centers.
-Automated replenishment triggers are based on reorder point models.
-Out-of-stock events are flagged and escalated to store managers automatically.
-
-Customer Personalization:
-H-E-B uses purchase history and browsing behavior to personalize promotions.
-Personalization models are updated nightly and served via the H-E-B app and website.
-Customer segments are defined by purchase frequency, basket size, and brand affinity.
-
-AI Enablement at H-E-B:
-MLOps pipelines manage the lifecycle of demand forecasting and personalization models.
-LLMOps frameworks support internal chatbots and customer facing AI assistants.
-RAG systems are used to ground AI responses in H-E-B product and policy data.
-LangSmith is used for LLM observability and tracing across all AI pipelines.
-"""
-
-with open("domain_knowledge.txt", "w") as f:
-    f.write(sample_doc)
+# domain_knowledge.txt contains the H-E-B retail knowledge base
 
 # Step 2: Load and chunk
 loader = TextLoader("domain_knowledge.txt")
