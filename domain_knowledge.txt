@@ -44,6 +44,7 @@ Vendor scorecards track on-time delivery, fill rate, and quality compliance.
 Supply chain disruptions are monitored in real time and alternative sourcing is activated when needed.
 H-E-B owns and operates its own trucking fleet for distribution.
 Cold chain management is critical for fresh produce and dairy products.
+When supply chain disruptions occur, H-E-B activates alternative sourcing strategies to ensure store replenishment continues without interruption.
 
 CUSTOMER PERSONALIZATION
 H-E-B uses purchase history and browsing behavior to personalize promotions.
