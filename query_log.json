@@ -26,5 +26,54 @@
     "answered": true,
     "category_filter": "Strategy",
     "answer_preview": "According to available knowledge, H-E-B personalizes promotions by using purchase history and browsing behavior. (Source"
+  },
+  {
+    "timestamp": "2026-05-14T21:48:43.568214",
+    "question": "How does H-E-B handle supply chain disruptions?",
+    "answered": true,
+    "category_filter": "All",
+    "answer_preview": "According to available knowledge, when supply chain disruptions occur, H-E-B activates alternative sourcing strategies ("
+  },
+  {
+    "timestamp": "2026-05-14T22:07:30.581049",
+    "question": "How does H-E-B handle supply chain disruptions?",
+    "answered": true,
+    "category_filter": "All",
+    "answer_preview": "According to available knowledge, when supply chain disruptions occur, H-E-B activates alternative sourcing strategies ("
+  },
+  {
+    "timestamp": "2026-05-14T22:08:01.887971",
+    "question": "What is the discount on private label products?",
+    "answered": false,
+    "category_filter": "All",
+    "answer_preview": "unanswered"
+  },
+  {
+    "timestamp": "2026-05-14T22:08:58.079639",
+    "question": "What is the weather in Austin today?",
+    "answered": false,
+    "category_filter": "All",
+    "answer_preview": "unanswered"
+  },
+  {
+    "timestamp": "2026-05-14T22:13:30.755893",
+    "question": "How does H-E-B handle supply chain disruptions?",
+    "answered": true,
+    "category_filter": "All",
+    "answer_preview": "According to available knowledge, when supply chain disruptions occur, H-E-B activates alternative sourcing strategies ("
+  },
+  {
+    "timestamp": "2026-05-14T22:13:44.529528",
+    "question": "What is the discount on private label products?",
+    "answered": true,
+    "category_filter": "All",
+    "answer_preview": "Pricing data is managed by the merchandising system. Current promotional pricing: Private label products are priced 15-2"
+  },
+  {
+    "timestamp": "2026-05-14T22:13:52.531289",
+    "question": "What is the weather in Austin today?",
+    "answered": false,
+    "category_filter": "All",
+    "answer_preview": "unanswered"
   }
 ]

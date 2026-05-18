@@ -83,6 +83,53 @@ def build_vectorstore():
     vectorstore = Chroma.from_documents(tagged_chunks, embeddings)
     return vectorstore
 
+def classify_intent(question: str) -> str:
+    """
+    Router: uses LLM to decide which tool to invoke.
+    This is the 'agent brain' - the decision layer that makes
+    this agentic vs a simple RAG pipeline.
+    
+    In production this would route to: internal knowledge base,
+    live inventory API, HR systems, pricing engine etc.
+    """
+    llm = ChatOllama(model="llama3.2", temperature=0)
+    
+    router_prompt = f"""You are a query router. Classify the user question into exactly one category.
+
+Categories:
+- knowledge: questions about company operations, strategy, supply chain, AI, forecasting, products
+- pricing: questions about price, cost, discount, margin, promotion
+- out_of_scope: questions unrelated to the company (weather, personal, news, etc.)
+
+Respond with ONLY one word: knowledge, pricing, or out_of_scope
+
+Question: {question}
+Category:"""
+    
+    result = llm.invoke(router_prompt)
+    intent = result.content.strip().lower()
+    
+    # Safety fallback - if LLM hallucinates a bad category, default to knowledge
+    if intent not in ["knowledge", "pricing", "out_of_scope"]:
+        intent = "knowledge"
+    
+    return intent
+
+def get_pricing_info(question: str) -> str:
+    """
+    Mock pricing tool - simulates what would be a real API call
+    to a pricing engine or database in production.
+    This is the 'tool use' pattern in agentic AI.
+    """
+    return (
+        "Pricing data is managed by the merchandising system. "
+        "Current promotional pricing: Private label products are "
+        "priced 15-20% below national brands. Dynamic pricing "
+        "applies to perishables within 24hrs of expiry. "
+        "(Note: This is a mock tool response - in production this "
+        "would call the live pricing API.)"
+    )
+    
 def build_chain(vectorstore, category_filter):
     """
     Builds a retrieval chain with optional metadata filtering.
@@ -189,21 +236,32 @@ if prompt_input := st.chat_input("Ask a question from company knowledge..."):
         st.markdown(prompt_input)
 
     with st.chat_message("assistant"):
-        with st.spinner("Retrieving from knowledge base..."):
-            vectorstore = build_vectorstore()
-            chain = build_chain(vectorstore, category_filter)
-            response = chain.invoke(prompt_input)
+        with st.spinner("Routing query..."):
+        # AGENT LAYER: classify intent first
+            intent = classify_intent(prompt_input)
+    
+        with st.spinner(f"Intent: {intent} — fetching response..."):
+            if intent == "out_of_scope":
+                response = "I can only answer questions from company knowledge base. This question appears to be outside that scope."
+                answered = False
+            elif intent == "pricing":
+                response = get_pricing_info(prompt_input)
+                answered = True
+            else:
+                vectorstore = build_vectorstore()
+                chain = build_chain(vectorstore, category_filter)
+                response = chain.invoke(prompt_input)
+                answered = "i don't know" not in response.lower()
 
-        answered = "i don't know" not in response.lower()
-        meta = f"Scope: {category_filter} | {'Answered from knowledge base' if answered else 'Not found in knowledge base'}"
+    meta = f"Intent: {intent} | Scope: {category_filter} | {'Answered' if answered else 'Not found'}"
 
-        st.markdown(response)
-        st.caption(meta)
+    st.markdown(response)
+    st.caption(meta)
 
-        log_query(prompt_input, response, answered, category_filter)
+    log_query(prompt_input, response, answered, category_filter)
 
-        st.session_state.messages.append({
-            "role": "assistant",
-            "content": response,
-            "meta": meta
-        })
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": response,
+        "meta": meta
+    })
